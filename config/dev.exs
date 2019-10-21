@@ -55,4 +55,5 @@ config :multitenant_poc, MultitenantPoc.Repo,
   password: "postgres",
   database: "multitenant_poc_dev",
   hostname: "localhost",
-  pool_size: 10
+  show_sensitive_data_on_connection_error: false,
+  pool_size: 20
