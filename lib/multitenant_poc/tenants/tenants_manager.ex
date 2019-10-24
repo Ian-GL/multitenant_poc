@@ -1,5 +1,7 @@
 defmodule MultitenantPoc.Tenants.TenantsManager do
   alias MultitenantPoc.Repo
+  alias MultitenantPoc.Schemas.Owner
+  alias MultitenantPoc.Tenants.CustomMigrations
 
   @fields [
     {:seeds, :int},
@@ -8,8 +10,26 @@ defmodule MultitenantPoc.Tenants.TenantsManager do
     # {:crop_date, :naive}
   ]
 
-  def create_tenant(name) do
+  def create_new_owner(name) when name in [nil, ""], do: {:error, "Please provide a name"}
+  def create_new_owner(name) do
+    with {:ok, tenant} <- create_tenant_schema(name),
+         {:ok, owner} <- create_owner(name)
+    do
+      CustomMigrations.create_initial_tables(tenant)
+      {:ok, owner}
+    else
+      _ -> {:error, "There was an error creating the tenant"}
+    end
+  end
+
+  def create_tenant_schema(name) do
     Triplex.create(name)
+  end
+
+  def create_owner(name) do
+    %Owner{}
+    |> Owner.changeset(%{name: name})
+    |> Repo.insert()
   end
 
   def create_single_table(tenant, table_name, fields \\ []) do

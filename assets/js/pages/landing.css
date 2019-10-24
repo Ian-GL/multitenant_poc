@@ -1,0 +1,95 @@
+.login-box {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: #CBDADE;
+  background-color: #ffffff;
+  text-align: center;
+  width: 350px;
+  height: 250px;
+  -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.login-input {
+  margin-top: 40px;
+  height: 30px;
+  width: 200px;
+  font-size: 1em;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #d2d6d2;
+}
+
+.login-input:focus {
+  border-color: #8bcc8b;
+  outline: none;
+}
+
+.login-button {
+  background-color: #66ac66;
+  color: #ffffff;
+  width: 80px;
+  padding: 10px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  opacity: 0.9;
+}
+
+.price-currency {
+  font-size: 0.5em;
+  font-weight: 400;
+}
+
+.price-subtitle {
+  font-size: 0.8em;
+  margin-top: 4px;
+  margin-bottom: 36px;
+  color: #616061;
+}
+
+.pricing-container {
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing-row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 800px;
+  max-width: 1000px;
+  align-self: center;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
+
+.calculator-container {
+  max-width: 1200px;
+  padding-bottom: 50px;
+}
+
+.calculator-input {
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #CBDADE;
+  height: 25px;
+}
